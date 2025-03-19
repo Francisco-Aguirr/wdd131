@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francisco Javier Aguirre">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. Made by Francisco Aguirre.">
+    <title>Barcelona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Barcelona</h1>
+        <div class="hero">
+            <picture>
+                <source srcset="images/barcelona-large.webp" media="(min-width: 768px)">
+                <img src="images/barcelona.webp" alt="Barcelona">
+            </picture>
+        </div>
+        <div class="data-card">
+            <h2>Data</h2>
+            <p>Area: 101.9 sq km</p>
+            <p>Population: 1.6 million</p>
+            <p>Capital: Barcelona</p>
+            <p>Languages: Catalan, Spanish</p>
+            <p>Currency: Euro (€)</p>
+            <p>Time Zone: UTC+1</p>
+            <p>Calling Code: +34</p>
+            <p>Internet TLD: .es</p>
+        </div>
+        <div class="weather-card">
+            <h2>Weather</h2>
+            <img src="images/cloud-sun-fill.svg" alt="">
+            <p>Temperature: 15°C</p>
+            <p>Conditions: Sunny</p>
+            <p>Wind: 10 km/h</p>
+            <p>Wind Chill: <span id="windChill">N/A</span></p>
+        </div>
+    </header>
+
+    <footer>
+        <p>©<span id="currentYear"></span> Francisco J. Aguirre | 🤖 |  Barcelona</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
