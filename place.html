@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/place.css">
-    <script src="scripts/place.js"></script>
+    <script src="scripts/place.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Barcelona</h1>
+    </header>
+    <main>
         <div class="hero">
             <picture>
                 <source srcset="images/barcelona-large.webp" media="(min-width: 768px)">
@@ -40,8 +42,7 @@
             <p>Wind: 10 km/h</p>
             <p>Wind Chill: <span id="windChill">N/A</span></p>
         </div>
-    </header>
-
+    </main>
     <footer>
         <p>©<span id="currentYear"></span> Francisco J. Aguirre | 🤖 |  Barcelona</p>
         <p>Last Modification: <span id="lastModified"></span></p>
