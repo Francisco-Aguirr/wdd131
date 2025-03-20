@@ -48,20 +48,22 @@ main {
 }
 
 .data-card {
-    background: rgba(183, 16, 16, 0.9);
+    background: #e48c11;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
     position: absolute;
     top: 100px;
+    color: black;
 }
 .weather-card {
-    background: rgba(183, 16, 16, 0.9);
+    background: #e48c11;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
     position: absolute;
     bottom: 100px;
+    color: black;
 }
 
 .data-card {
