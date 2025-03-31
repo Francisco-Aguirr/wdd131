@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francisco J. Aguirre">
+    <meta name="description" content="product review form for a fictisius company">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/forms.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review Form</h1>
+    </header>
+
+    <form id="reviewForm" method="get" action="review.html">
+        <div class="form-group">
+            <label for="product" class="required">Product Name</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product...</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="required">Overall Rating</label>
+            <div class="rating-container">
+                <div class="rating-option">
+                    <input type="radio" id="rating1" name="rating" value="1" required>
+                    <label for="rating1">1 ☆</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" id="rating2" name="rating" value="2">
+                    <label for="rating2">2 ☆☆</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" id="rating3" name="rating" value="3">
+                    <label for="rating3">3 ☆☆☆</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" id="rating4" name="rating" value="4">
+                    <label for="rating4">4 ☆☆☆☆</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" id="rating5" name="rating" value="5">
+                    <label for="rating5">5 ☆☆☆☆☆</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="installDate" class="required">Date of Installation</label>
+            <input type="date" id="installDate" name="installDate" required>
+        </div>
+
+        <div class="form-group">
+            <label>Useful Features (Check all that apply)</label>
+            <div class="features-container">
+                <div class="feature-option">
+                    <input type="checkbox" id="feature1" name="features" value="Ease of use">
+                    <label for="feature1">Ease of use</label>
+                </div>
+                <div class="feature-option">
+                    <input type="checkbox" id="feature2" name="features" value="Performance">
+                    <label for="feature2">Performance</label>
+                </div>
+                <div class="feature-option">
+                    <input type="checkbox" id="feature3" name="features" value="Design">
+                    <label for="feature3">Design</label>
+                </div>
+                <div class="feature-option">
+                    <input type="checkbox" id="feature4" name="features" value="Price">
+                    <label for="feature4">Price</label>
+                </div>
+                <div class="feature-option">
+                    <input type="checkbox" id="feature5" name="features" value="Durability">
+                    <label for="feature5">Durability</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="review">Written Review</label>
+            <textarea id="review" name="review" placeholder="Share your experience with the product..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="username">User Name (optional)</label>
+            <input type="text" id="username" name="username" placeholder="Your name">
+        </div>
+
+        <input type="submit" value="Submit Review">
+    </form>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Product Reviews | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
