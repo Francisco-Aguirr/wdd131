@@ -1,0 +1,113 @@
+body {background-color: #fcfaf9;}
+h1, h2, p{
+    color: #F5EFED;
+}
+h1, h2 {
+    font-family: "Winky", sans-serif;
+}
+
+p {
+    font-family: "Gidole", sans-serif;
+}
+nav {
+    background-color: #423E3B;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #D96C06;
+    border-radius: 5px;
+    width: 100%;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    background-color: #423E3B;
+    color: white;
+    border: 1px solid #D96C06;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;
+    width: 100%;
+}
+
+/* color schema section */
+
+.color-schema {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px solid #D96C06;
+    border-radius: 5px;
+    background-color: #423E3B;
+}
+
+.color {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #D96C06;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.color1 {
+    background-color: #423E3B;
+    color: white;
+}
+
+.color2 {
+    background-color: #F5EFED;
+}
+
+.color3 {
+    background-color: #D96C06;
+}
+ /* Typography section */
+ .typography {
+    background-color: #423E3B;
+    color: #F5EFED;
+    border: 1px solid #D96C06;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+ }
+
+ .wireframe {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: #423E3B;
+    border: 1px solid #D96C06;
+    border-radius: 5px;
+ }
+
+ .wireframe img {
+    margin: 15px;
+ }
+
+ @media screen and (min-width: 375px) {
+    .content{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: auto;
+    }
+    .wireframe img {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: auto;
+    }
+ }
+ footer {
+    text-align: center;
+    color: black;
+    height: 25px;
+    border-bottom: 1px solid #D96C06;
+ }
+
+
