@@ -1,0 +1,54 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Morning workout",
+        "description": "30 minutes of cardio",
+        "category": "myDay",
+        "dueDate": "2025-04-05",
+        "important": true,
+        "completed": false,
+        "createdAt": "2025-04-01T08:00:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Team meeting",
+        "description": "Weekly project sync",
+        "category": "work",
+        "dueDate": "2025-04-05",
+        "important": true,
+        "completed": false,
+        "createdAt": "2025-04-01T09:00:00Z"
+      },
+      {
+        "id": 3,
+        "title": "Lunch with Sarah",
+        "description": "Catch up with college friend",
+        "category": "social",
+        "dueDate": "2025-04-06",
+        "important": false,
+        "completed": false,
+        "createdAt": "2025-04-02T12:00:00Z"
+      },
+      {
+        "id": 4,
+        "title": "Finish project report",
+        "description": "Submit to manager by EOD",
+        "category": "work",
+        "dueDate": "2025-04-04",
+        "important": true,
+        "completed": true,
+        "createdAt": "2025-03-30T14:00:00Z"
+      },
+      {
+        "id": 5,
+        "title": "Buy groceries",
+        "description": "Milk, eggs, bread, fruits",
+        "category": "myDay",
+        "dueDate": "2025-04-05",
+        "important": false,
+        "completed": false,
+        "createdAt": "2025-04-03T18:00:00Z"
+      }
+    ]
+  }
