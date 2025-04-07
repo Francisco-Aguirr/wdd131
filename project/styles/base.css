@@ -203,8 +203,8 @@ main {
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group textarea
+ {
     width: 100%;
     padding: 0.75rem;
     background: rgba(0, 0, 0, 0.2);
@@ -214,6 +214,15 @@ main {
     font-family: inherit;
 }
 
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgb(25, 35, 50);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-family: inherit;
+}
 .form-group textarea {
     min-height: 120px;
     resize: vertical;
@@ -271,7 +280,7 @@ main {
     gap: 0.75rem;
     flex-wrap: wrap;
     margin-top: 0.75rem;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 .task-category {
@@ -296,9 +305,7 @@ main {
     color: #f3b7fe;
 }
 
-.task-due {
-    opacity: 0.8;
-}
+
 
 .task-important {
     color: var(--accent-color);
@@ -354,4 +361,68 @@ footer {
 
 footer img {
     margin-left: 1.3rem;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+/* modales windows */
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(43, 45, 74);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+#confirm-btn {
+    background-color: rgba(216, 24, 10, 0.2);
+    color: #ffd493;
+}
+
+#cancel-btn {
+    background-color: #063a4a;
+    color: white;
+}
+
+/* Estilos para el mensaje emergente */
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }

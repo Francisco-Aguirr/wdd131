@@ -143,6 +143,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Renderizar tareas
     renderTasks(taskManager.getTasksByCategory(currentCategory));
     
+// new modal
+// Función para mostrar una ventana modal personalizada
+function showModal(message, onConfirm) {
+    const modal = document.createElement('div');
+    modal.classList.add('custom-modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <p>${message}</p>
+            <button id="confirm-btn">Yes</button>
+            <button id="cancel-btn">No</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('confirm-btn').addEventListener('click', () => {
+        onConfirm();
+        modal.remove();
+        showToast("Task deleted");
+    });
+
+    document.getElementById('cancel-btn').addEventListener('click', () => {
+        modal.remove();
+    });
+}
+// Función para mostrar un mensaje emergente
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.classList.add('toast-message');
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+// new modal
+
     function renderTasks(tasks) {
         if (tasks.length === 0) {
             taskList.innerHTML = '<p class="no-tasks">No tasks found in this category.</p>';
@@ -155,12 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${task.title}</h3>
                     ${task.description ? `<p>${task.description}</p>` : ''}
                     <div class="task-meta">
-                        ${task.category !== 'general' ? 
-                          `<span class="task-category ${task.category}">${task.category}</span>` : ''}
-                        ${task.dueDate ? 
-                          `<span class="task-due">Due: ${formatDate(task.dueDate)}</span>` : ''}
-                        ${task.important ? 
-                          '<span class="task-important">⭐ Important</span>' : ''}
+                        ${task.category !== 'general' ? `<span class="task-category ${task.category}">${task.category}</span>` : ''}
+                        ${task.dueDate ? `<span class="task-due">Due: ${formatDate(task.dueDate)}</span>` : ''}
+                        ${task.important ? '<span class="task-important">⭐ Important</span>' : ''}
                     </div>
                 </div>
                 <div class="task-actions">
@@ -169,24 +201,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `).join('');
-        
-        // Añadir event listeners
+    
+        // Agregar eventos a los botones después de renderizar
         document.querySelectorAll('.complete-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const taskId = parseInt(e.target.closest('.task-item').dataset.id);
                 if (taskManager.toggleTaskCompletion(taskId)) {
                     renderTasks(taskManager.getTasksByCategory(currentCategory));
+                    showToast('Task completed 🎉!');
                 }
             });
         });
-        
+    
         document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                if (confirm('Are you sure you want to delete this task?')) {
-                    const taskId = parseInt(e.target.closest('.task-item').dataset.id);
+                const taskId = parseInt(e.target.closest('.task-item').dataset.id);
+                showModal('Are you sure you want to delete this task?', () => {
                     taskManager.deleteTask(taskId);
                     renderTasks(taskManager.getTasksByCategory(currentCategory));
-                }
+                });
             });
         });
     }
