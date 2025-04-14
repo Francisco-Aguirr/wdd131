@@ -1,0 +1,362 @@
+:root {
+    /* Colores vibrantes con contraste AA/AAA */
+    --primary: #6200ea;
+    --primary-light: #5b10b1;
+    --secondary: #03dac6;
+    --text: #1e1e1e;
+    --background: #ffffff;
+    --card-bg: #f5f5f5;
+  }
+  
+  /* Reset y tipografía */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navegación */
+  header {
+    background: var(--primary);
+    padding: 1rem;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  nav a:hover, nav a[aria-current] {
+    background: var(--primary-light);
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero span {
+    color: rgb(255, 185, 55);
+  }
+  
+  .button {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Tips Grid */
+  .tips {
+    padding: 2rem;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tip-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tip-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .tip-card h3 {
+    padding: 1rem 1rem 0;
+    color: var(--primary);
+  }
+  
+  .tip-card p {
+    padding: 0 1rem 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    background: var(--text);
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+
+
+/* === Task Manager Styles === */
+.task-manager {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .task-form {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .progress-track {
+    width: 200px;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: var(--secondary);
+    transition: width 0.3s;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .filter-button {
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-button.active {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .task-list {
+    list-style: none;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .task-item.completed .task-title {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  
+  .task-title {
+    margin-left: 0.5rem;
+  }
+  
+  .task-due {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .delete-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff4444;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #151515;
+  }
+
+/* === Collaborate Page Styles === */
+.collaborate {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .project-header h3 {
+    color: var(--primary);
+  }
+  
+  .due-date {
+    font-size: 0.9rem;
+    color: #1b1a1a;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: var(--secondary);
+  }
+  
+  .project-members {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .member img {
+    border-radius: 50%;
+    border: 2px solid var(--primary-light);
+  }
+  
+  .join-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .join-button:hover {
+    background: var(--primary-light);
+  }
+  
+  .join-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .assign-form {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+  }
+  
+  .assign-form h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .assign-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }

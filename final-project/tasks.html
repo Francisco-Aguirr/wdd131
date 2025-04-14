@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Francisco Javier Aguirre">
+  <meta name="description" content="TaskPilot is a web made to help people manage their daily life. Providing the ability to filter tasks by topic as well as functions to add, complete, delete or mark a task as important.">
+  <title>My Tasks | TaskPilot</title>
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon"> 
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/tasks.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tasks.html" aria-current="page">My Tasks</a></li>
+        <li><a href="collaborate.html">Collaborate</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="task-manager" aria-labelledby="tasks-title">
+      <h1 id="tasks-title">My Tasks</h1>
+      
+      <!-- Form to add tasks -->
+      <form id="task-form" class="task-form">
+        <div class="form-group">
+          <label for="task-input">Task Title</label>
+          <input 
+            type="text" 
+            id="task-input" 
+            placeholder="E.g., Finish project report" 
+            required
+            aria-required="true"
+          >
+        </div>
+        <div class="form-group">
+          <label for="task-due">Due Date</label>
+          <input 
+            type="date" 
+            id="task-due" 
+            aria-label="Due date"
+          >
+        </div>
+        <button type="submit" class="button">Add Task</button>
+      </form>
+
+      <!-- Filters and Progress Tracker -->
+      <div class="task-controls">
+        <div class="progress-bar">
+          <span id="progress-text">0%</span>
+          <div class="progress-track">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+        <div class="filters">
+          <button id="filter-all" class="filter-button active">All</button>
+          <button id="filter-active" class="filter-button">Active</button>
+          <button id="filter-completed" class="filter-button">Completed</button>
+        </div>
+      </div>
+
+      <!-- Tasks lists -->
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 TaskPilot. Francisco Aguirre.</p>
+  </footer>
+</body>
+</html>
